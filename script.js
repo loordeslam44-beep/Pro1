@@ -34,3 +34,24 @@ document.getElementById("clearBtn").onclick = function () {
 
     filterPlaces();
 };
+const sortSelect = document.getElementById('sortSelect');
+const container = document.getElementById('placesContainer');
+
+sortSelect.addEventListener('change', () => {
+  const places = Array.from(container.querySelectorAll('.place'));
+  const value = sortSelect.value;
+
+  places.sort((a, b) => {
+    if (value === 'name') {
+      return a.dataset.name.localeCompare(b.dataset.name);
+    }
+    if (value === 'rating') {
+      return parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating);
+    }
+    if (value === 'nearest') {
+      return parseFloat(a.dataset.distance) - parseFloat(b.dataset.distance);
+    }
+  });
+
+  places.forEach(place => container.appendChild(place));
+});
