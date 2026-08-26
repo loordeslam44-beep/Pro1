@@ -17,8 +17,6 @@ body {
     width: 100%;
     max-width: 2500px;
     padding: 20px;
-    animation-name: d;
-    animation-duration: 3s;
 }
 
 .medical-card {
@@ -52,19 +50,7 @@ body {
     color: #68717c;
 }
 
-.sort-box {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.sort-box span {
-    font-size: 14px;
-    font-weight: 600;
-    color: #3e4650;
-}
-
-.sort-box .form-select {
+.form-select {
     width: 140px;
     height: 38px;
     font-size: 13px;
@@ -315,22 +301,7 @@ body {
         align-items: flex-start;
     }
 
-    .sort-box {
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .sort-box .form-select {
+    .form-select {
         flex: 1;
-    }
-}
-@keyframes d {
-    from {
-        transform: translateY(30px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
     }
 }
